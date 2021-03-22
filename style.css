@@ -1,21 +1,13 @@
 :root {
-  --background-color: hsl(0, 0%, 100%);
-  --color-text: hsl(228, 12%, 44%);
-  --color-title: black;
-  --color-card-bg: hsl(227, 47%, 96%);
+  --background-color: hsl(230, 17%, 14%);
+  --color-text: hsl(228, 34%, 66%);
+  --color-title: white;
+  --color-card-bg: hsl(228, 28%, 20%);
 
   --color-positive: hsl(163, 72%, 41%);
   --color-negative: hsl(356, 69%, 56%);
   --color-recovered: hsl(202, 69%, 56%);
 }
-
-.dark-mode:root {
-  --background-color: hsl(230, 17%, 14%);
-  --color-text: hsl(228, 34%, 66%);
-  --color-title: white;
-  --color-card-bg: hsl(228, 28%, 20%);
-}
-
 * {
   border: 0;
   margin: 0;
@@ -46,13 +38,14 @@ body {
 
 .info__sub-title,
 .header__text,
-.body__text {
+.card__text {
   color: var(--color-text);
+  text-align: center;
 }
 
 .info__sub-title,
 .header__text,
-.body__title,
+.card__title,
 .footer__text,
 .bottom__quantity,
 .percentage__text {
@@ -80,22 +73,17 @@ body {
   / CONTAINER SOCIAL MEDIA  /
   / ========================================================================== */
 
-.container__social-media {
+.total-info {
   width: 100%;
 }
 
-.social-media__top-bar {
+.total-info__cards {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.top-bar__info {
-  border-bottom: 1px solid var(--color-text);
-  padding-bottom: 15px;
-}
-
-.info__title,
+.total-info__title,
 .country__title {
   font-size: 24px;
   color: var(--color-title);
@@ -106,7 +94,7 @@ body {
   font-size: 15px;
 }
 
-.social-media__content {
+.country__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,27 +151,21 @@ body {
   flex-direction: column;
 }
 
-.body__title {
+.card__title {
   font-size: 25px;
   color: var(--color-title);
 }
 
-.body__text {
+.card__text {
   text-transform: uppercase;
   letter-spacing: 2px;
+  margin-top: 10px;
   font-size: 13px;
 }
 
-.footer__image {
-  margin-right: 5px;
-}
-
-.footer__text--red {
-  color: var(--color-negative);
-}
-
-.footer__text--green {
-  color: var(--color-positive);
+.country {
+  width: 100%;
+  margin-top: 25px;
 }
 
 /* ========================================================================== /
@@ -207,24 +189,22 @@ body {
     max-width: 293px;
   }
 
-  .social-media__content {
-    flex-flow: row wrap;
-    justify-content: space-between;
+  .country__container {
+    column-gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .social-media__top-bar {
+  .total-info__cards {
     flex-direction: row;
     justify-content: space-between;
+    column-gap: 20px;
   }
 
-  .info__title,
+  .total-info__title,
   .country__title {
     font-size: 20px;
     text-align: center;
-  }
-
-  .top-bar__info {
-    border: 0;
   }
 
   .info__sub-title,
@@ -263,8 +243,8 @@ body {
   / ========================================================================== */
 
 /* ========================================================================== /
-  / DESKTOP /
-  / ========================================================================== */
+/ DESKTOP /
+/ ========================================================================== */
 
 @media screen and (min-width: 1000px) {
   body {
@@ -285,34 +265,27 @@ body {
     max-width: 1200px;
   }
 
-  .card {
-    /* width: 150px; */
-  }
-
-  .social-media__content {
+  .country__container {
     column-gap: 40px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
   }
 
-  .social-media__top-bar {
+  .total-info__cards {
     margin-top: 20px;
     flex-direction: row;
     justify-content: space-between;
+    column-gap: 20px;
   }
 
-  .info__title,
+  .total-info__title,
   .country__title {
-    font-size: 20px;
+    font-size: 17px;
     text-align: center;
   }
 
-  .info__title {
+  .total-info__title {
     font-size: 35px;
-  }
-
-  .top-bar__info {
-    border: 0;
   }
 
   .info__sub-title,
@@ -347,5 +320,5 @@ body {
 }
 
 /* ========================================================================== /
-  / END-DESKTOP /
-  / ========================================================================== */
+/ END-DESKTOP /
+/ ========================================================================== */
