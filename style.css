@@ -54,11 +54,20 @@ body {
   justify-content: center;
 }
 
-.total-info__title,
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title__text,
 .country__title {
   font-size: 24px;
   color: var(--color-title);
   text-align: center;
+}
+
+.title__flag {
+  width: 40px;
 }
 
 /* ========================================================================== /
@@ -171,7 +180,7 @@ body {
     column-gap: 20px;
   }
 
-  .total-info__title,
+  .title__text,
   .country__title {
     font-size: 20px;
     text-align: center;
@@ -218,13 +227,13 @@ body {
     column-gap: 20px;
   }
 
-  .total-info__title,
+  .title__text,
   .country__title {
     font-size: 17px;
     text-align: center;
   }
 
-  .total-info__title {
+  .title__text {
     font-size: 35px;
   }
 }
