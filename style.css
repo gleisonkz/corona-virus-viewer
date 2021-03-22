@@ -4,8 +4,8 @@
   --color-title: white;
   --color-card-bg: hsl(228, 28%, 20%);
 
-  --color-positive: hsl(163, 72%, 41%);
-  --color-negative: hsl(356, 69%, 56%);
+  --color-confirmed: hsl(163, 72%, 41%);
+  --color-deaths: hsl(356, 69%, 56%);
   --color-recovered: hsl(202, 69%, 56%);
 }
 * {
@@ -32,23 +32,6 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-/* ========================================================================== /
-  / GROUP-STYLES  /
-  / ========================================================================== */
-
-.card__text {
-  color: var(--color-text);
-  text-align: center;
-}
-
-.card__title {
-  font-weight: bold;
-}
-
-/* ========================================================================== /
-  / END-GROUP-STYLES /
-  / ========================================================================== */
-
 .container {
   height: 100%;
   width: 100%;
@@ -57,18 +40,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 
   background-color: var(--background-color);
 }
 
 /* ========================================================================== /
-  / CONTAINER SOCIAL MEDIA  /
-  / ========================================================================== */
-
-.total-info {
-  width: 100%;
-}
+/ TOTAL-INFO   /
+/ ========================================================================== */
 
 .total-info__cards {
   display: flex;
@@ -83,15 +61,13 @@ body {
   text-align: center;
 }
 
-.country__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+/* ========================================================================== /
+/ END-TOTAL-INFO   /
+/ ========================================================================== */
 
 /* ========================================================================== /
-  / CARD /
-  / ========================================================================== */
+/ CARD /
+/ ========================================================================== */
 
 .card {
   display: flex;
@@ -121,13 +97,13 @@ body {
 }
 
 .card--recovered.card::before {
-  background-color: #1ca0f2;
+  background-color: var(--color-recovered);
 }
 .card--confirmed.card::before {
-  background-color: #1db489;
+  background-color: var(--color-confirmed);
 }
 .card--deaths.card::before {
-  background-color: #dc414c;
+  background-color: var(--color-deaths);
 }
 
 .card__body {
@@ -143,6 +119,7 @@ body {
 .card__title {
   font-size: 25px;
   color: var(--color-title);
+  font-weight: bold;
 }
 
 .card__text {
@@ -150,6 +127,19 @@ body {
   letter-spacing: 2px;
   margin-top: 10px;
   font-size: 13px;
+  color: var(--color-text);
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ========================================================================== /
+/ END-CARD /
+/ ========================================================================== */
+
+.country__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .country {
@@ -158,16 +148,8 @@ body {
 }
 
 /* ========================================================================== /
-  / END-CARD /
-  / ========================================================================== */
-
-/* ========================================================================== /
-  / END-CONTAINER SOCIAL MEDIA/
-  / ========================================================================== */
-
-/* ========================================================================== /
-  / TABLET/
-  / ========================================================================== */
+/ TABLET/
+/ ========================================================================== */
 
 @media screen and (min-width: 730px) and (max-width: 999px) {
   .container {
@@ -179,14 +161,13 @@ body {
   }
 
   .country__container {
-    column-gap: 40px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
   }
 
   .total-info__cards {
     flex-direction: row;
-    justify-content: space-between;
     column-gap: 20px;
   }
 
@@ -195,40 +176,11 @@ body {
     font-size: 20px;
     text-align: center;
   }
-
-  .toggle__text {
-    font-size: 12px;
-  }
-
-  .toggle__text {
-    margin-right: 10px;
-  }
-
-  .top-bar__toggle {
-    margin: 0;
-    align-items: center;
-  }
-
-  .toggle__container {
-    height: 24px;
-    width: 48px;
-  }
-
-  .toggle__switch:before {
-    height: 20px;
-    width: 20px;
-    right: 3px;
-    bottom: 3px;
-  }
-
-  .toggle__input:checked + .toggle__switch::before {
-    transform: translateX(-22px);
-  }
 }
 
 /* ========================================================================== /
-  / END-TABLET /
-  / ========================================================================== */
+/ END-TABLET /
+/ ========================================================================== */
 
 /* ========================================================================== /
 / DESKTOP /
@@ -274,32 +226,6 @@ body {
 
   .total-info__title {
     font-size: 35px;
-  }
-
-  .toggle__text {
-    font-size: 12px;
-    margin-right: 10px;
-  }
-
-  .top-bar__toggle {
-    margin: 0;
-    align-items: center;
-  }
-
-  .toggle__container {
-    height: 24px;
-    width: 48px;
-  }
-
-  .toggle__switch:before {
-    height: 20px;
-    width: 20px;
-    right: 3px;
-    bottom: 3px;
-  }
-
-  .toggle__input:checked + .toggle__switch::before {
-    transform: translateX(-22px);
   }
 }
 
