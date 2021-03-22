@@ -32,7 +32,6 @@
     const $country = document.createElement("div");
     $country.classList.add("country");
     $country.innerHTML = `
-    <div class="country">
     <h5 class="country__title">${name}</h5>
     <div class="card card--confirmed">
       <div class="card__body">
@@ -53,8 +52,7 @@
         <span class="card__title">${format(deaths)}</span>
         <span class="card__text">MORTES</span>
       </div>
-    </div>
-  </div>`;
+    </div>`;
     $countryContainer.appendChild($country);
   }
 

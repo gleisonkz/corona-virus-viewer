@@ -54,14 +54,27 @@ body {
   justify-content: center;
 }
 
-.title {
+.header {
   display: flex;
   justify-content: space-between;
 }
 
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.title .title__flag {
+  margin-left: 20px;
+}
+
+.title__flag--github {
+  cursor: pointer;
+}
+
 .title__text,
 .country__title {
-  font-size: 24px;
+  font-size: 20px;
   color: var(--color-title);
   text-align: center;
 }
@@ -162,10 +175,6 @@ body {
 @media screen and (min-width: 730px) and (max-width: 999px) {
   .container {
     padding: 20px 60px;
-  }
-
-  .card {
-    max-width: 293px;
   }
 
   .country__container {
