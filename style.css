@@ -36,19 +36,12 @@ body {
   / GROUP-STYLES  /
   / ========================================================================== */
 
-.info__sub-title,
-.header__text,
 .card__text {
   color: var(--color-text);
   text-align: center;
 }
 
-.info__sub-title,
-.header__text,
-.card__title,
-.footer__text,
-.bottom__quantity,
-.percentage__text {
+.card__title {
   font-weight: bold;
 }
 
@@ -88,10 +81,6 @@ body {
   font-size: 24px;
   color: var(--color-title);
   text-align: center;
-}
-
-.info__sub-title {
-  font-size: 15px;
 }
 
 .country__container {
@@ -207,7 +196,6 @@ body {
     text-align: center;
   }
 
-  .info__sub-title,
   .toggle__text {
     font-size: 12px;
   }
@@ -288,12 +276,8 @@ body {
     font-size: 35px;
   }
 
-  .info__sub-title,
   .toggle__text {
     font-size: 12px;
-  }
-
-  .toggle__text {
     margin-right: 10px;
   }
 
